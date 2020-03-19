@@ -1,0 +1,17 @@
+{
+  "name": "puppeteer-mhtml",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "lizhigao <lizhigao1231@163.com>",
+  "license": "MIT",
+  "dependencies": {
+    "mhtml-parser": "^1.0.2",
+    "mhtml2html": "^3.0.0",
+    "puppeteer": "^2.1.1"
+  }
+}
