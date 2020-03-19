@@ -8,7 +8,12 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "keywords": [
+    "xyzbot",
+    "bot",
+    "fetch",
+    "save"
+  ],
   "author": "lizhigao <lizhigao@021.com>",
   "license": "MIT",
   "dependencies": {
