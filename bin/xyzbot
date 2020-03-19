@@ -1,0 +1,32 @@
+#!/usr/bin/env node
+
+const commander = require('commander');
+const program = new commander.Command();
+const start = require('../lib/start');
+const version = require('../package.json').version;
+
+function getValue(value) {
+  return value;
+}
+
+// 版本
+program
+  .version(version, '-v, --VERSION')
+  .option('-u, --url <string>', '[required] website url you want to fetch', getValue)
+  .option(
+    '-wtc, --wait-time-close <number>',
+    '[optional] wait time to close the browser when fetching, default 30s',
+    getValue
+  )
+  .parse(process.argv);
+
+// if (!program.args.length) program.help();
+
+const url = program.url;
+const wtc = program.waitTimeClose;
+
+if (!url) {
+  program.help();
+}
+
+start(url, wtc);

@@ -1,17 +1,25 @@
 {
-  "name": "puppeteer-mhtml",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "xyzbot",
+  "version": "0.0.1",
+  "description": "Saving and scraping a website with Puppeteer",
+  "bin": {
+    "xyzbot": "bin/xyzbot"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "lizhigao <lizhigao1231@163.com>",
+  "author": "lizhigao <lizhigao@021.com>",
   "license": "MIT",
   "dependencies": {
-    "mhtml-parser": "^1.0.2",
-    "mhtml2html": "^3.0.0",
+    "chalk": "^3.0.0",
+    "commander": "^5.0.0",
+    "fs-extra": "^8.1.0",
+    "ora": "^4.0.3",
     "puppeteer": "^2.1.1"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-plugin-xmfe": "^1.0.0"
   }
 }
