@@ -20,11 +20,12 @@
     "chalk": "^3.0.0",
     "commander": "^5.0.0",
     "fs-extra": "^8.1.0",
+    "inquirer": "^7.1.0",
     "ora": "^4.0.3",
     "puppeteer": "^2.1.1"
   },
   "devDependencies": {
     "eslint": "^6.8.0",
-    "eslint-plugin-xmfe": "^1.0.0"
+    "eslint-plugin-xmfe": "^1.0.1"
   }
 }
