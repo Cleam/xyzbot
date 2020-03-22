@@ -26,6 +26,6 @@
   },
   "devDependencies": {
     "eslint": "^6.8.0",
-    "eslint-plugin-xmfe": "^1.0.1"
+    "eslint-plugin-xmfe": "^1.0.2"
   }
 }
