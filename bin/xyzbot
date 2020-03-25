@@ -2,6 +2,8 @@
 
 const commander = require('commander');
 const program = new commander.Command();
+const chalk = require('chalk');
+const inquirer = require('inquirer');
 const start = require('../lib/start');
 const version = require('../package.json').version;
 
@@ -25,8 +27,35 @@ program
 const url = program.url;
 const wtc = program.waitTimeClose;
 
-if (!url) {
-  program.help();
-}
+const reg = new RegExp(
+  /^(?=^.{3,255}$)(http(s)?:\/\/)?(www\.)?[a-zA-Z0-9][-a-zA-Z0-9]{0,62}(\.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+(:\d+)*(\/\w+\.\w+)*([\?&]\w+=\w*)*$/
+);
+const errMsg = '😁 You need to provide a valid url! ';
 
-start(url, wtc);
+if (!url) {
+  // program.help();
+  inquirer
+    .prompt([
+      {
+        type: 'input',
+        name: 'url',
+        message: 'Please enter url: ',
+        validate(input) {
+          if (!reg.test(input)) {
+            console.log();
+            console.log(chalk.red(errMsg));
+            return false;
+          }
+          return true;
+        }
+      }
+    ])
+    .then(({ url }) => {
+      start(url);
+    });
+} else if (!reg.test(url)) {
+  console.log();
+  console.log(chalk.red(errMsg));
+} else {
+  start(url, wtc);
+}

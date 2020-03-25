@@ -1,6 +1,6 @@
 {
   "name": "xyzbot",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Saving and scraping a website with Puppeteer",
   "bin": {
     "xyzbot": "bin/xyzbot"
