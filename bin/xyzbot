@@ -27,9 +27,8 @@ program
 const url = program.url;
 const wtc = program.waitTimeClose;
 
-const reg = new RegExp(
-  /^(?=^.{3,255}$)(http(s)?:\/\/)?(www\.)?[a-zA-Z0-9][-a-zA-Z0-9]{0,62}(\.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+(:\d+)*(\/\w+\.\w+)*([\?&]\w+=\w*)*$/
-);
+var expression = /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)?/gi;
+const reg = new RegExp(expression);
 const errMsg = '😁 You need to provide a valid url! ';
 
 if (!url) {
@@ -41,7 +40,7 @@ if (!url) {
         name: 'url',
         message: 'Please enter url: ',
         validate(input) {
-          if (!reg.test(input)) {
+          if (!reg.match(input)) {
             console.log();
             console.log(chalk.red(errMsg));
             return false;
